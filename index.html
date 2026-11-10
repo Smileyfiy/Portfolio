@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>jh&amp;n — John Otieno</title>
+    <meta
+      name="description"
+      content="John Otieno — Computer Science student at the University of Nairobi building practical software, learning cloud engineering on AWS and exploring agentic AI."
+    />
+    <meta name="theme-color" content="#f4ede1" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script>
+      // set the theme before first paint to avoid a flash; cream ("light") is the brand default
+      document.documentElement.dataset.theme = "light";
+      try {
+        document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+      } catch {}
+    </script>
+  </head>
+  <body>
+    <div class="backdrop" aria-hidden="true">
+      <span class="blob blob-a"></span>
+      <span class="blob blob-b"></span>
+      <span class="blob blob-c"></span>
+    </div>
+
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="nav glass">
+      <a class="brand" href="#top" aria-label="jh&n — back to top">jh<span class="amp">&amp;</span>n</a>
+      <nav aria-label="Sections">
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#credentials">Awards</a></li>
+          <li hidden><a href="#gallery">Gallery</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Toggle light and dark theme">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z" /></svg>
+      </button>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top">
+        <div class="hero-copy reveal">
+          <p class="eyebrow" data-bind="location"></p>
+          <h1><span data-bind="name"></span></h1>
+          <p class="hero-role" data-bind="role"></p>
+          <p class="hero-tagline" data-bind="tagline"></p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">View my work</a>
+            <a class="btn glass" href="#contact">Get in touch</a>
+          </div>
+        </div>
+        <div class="hero-mark glass reveal" id="hero-mark">
+          <img class="hero-photo" id="hero-photo" alt="" hidden />
+          <div class="mark-fallback" aria-hidden="true">
+            <span class="mark">jh<span class="amp">&amp;</span>n</span>
+            <span class="mark-sub">build · learn · ship</span>
+          </div>
+          <span class="photo-tag glass" aria-hidden="true">jh<span class="amp">&amp;</span>n</span>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="section-head reveal">
+          <p class="eyebrow">01 — About</p>
+          <h2>Curious builder, practical problem-solver.</h2>
+        </div>
+        <div class="about-grid">
+          <div class="glass panel reveal"><p data-bind="intro"></p></div>
+          <div class="glass panel reveal">
+            <h3>Current focus</h3>
+            <ul class="focus-list" id="focus-list"></ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" class="section">
+        <div class="section-head reveal">
+          <p class="eyebrow">02 — Experience</p>
+          <h2>Where I've shipped and learned.</h2>
+          <p class="hint">Select a card for the full story.</p>
+        </div>
+        <div class="card-grid two" id="experience-grid"></div>
+      </section>
+
+      <section id="projects" class="section">
+        <div class="section-head reveal">
+          <p class="eyebrow">03 — Projects</p>
+          <h2>Things I've built, and what's next.</h2>
+        </div>
+        <div class="filters glass reveal" role="group" aria-label="Filter projects by status">
+          <button type="button" class="filter is-active" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="filter" data-filter="completed" aria-pressed="false">Completed</button>
+          <button type="button" class="filter" data-filter="in-progress" aria-pressed="false">In progress</button>
+          <button type="button" class="filter" data-filter="planned" aria-pressed="false">Planned</button>
+        </div>
+        <div class="card-grid three" id="project-grid"></div>
+      </section>
+
+      <section id="education" class="section">
+        <div class="section-head reveal">
+          <p class="eyebrow">04 — Education</p>
+          <h2>Foundations.</h2>
+        </div>
+        <div class="card-grid two" id="education-grid"></div>
+      </section>
+
+      <section id="credentials" class="section">
+        <div class="section-head reveal">
+          <p class="eyebrow">05 — Certifications &amp; Milestones</p>
+          <h2>Recognition along the way.</h2>
+        </div>
+        <div class="card-grid three" id="credential-grid"></div>
+      </section>
+
+      <section id="gallery" class="section" hidden>
+        <div class="section-head reveal">
+          <p class="eyebrow">Gallery</p>
+          <h2>Moments &amp; proof.</h2>
+          <p class="hint">Photos and evidence from the work and milestones above.</p>
+        </div>
+        <div class="gallery-grid" id="gallery-grid"></div>
+      </section>
+
+      <section id="skills" class="section">
+        <div class="section-head reveal">
+          <p class="eyebrow">06 — Skills</p>
+          <h2>An honest inventory.</h2>
+          <ul class="legend" aria-label="Skill levels">
+            <li><span class="dot lvl-hands-on"></span>Hands-on — used in real work</li>
+            <li><span class="dot lvl-comfortable"></span>Comfortable</li>
+            <li><span class="dot lvl-learning"></span>Learning</li>
+          </ul>
+        </div>
+        <div class="card-grid three" id="skill-grid"></div>
+      </section>
+
+      <section id="beyond" class="section">
+        <div class="section-head reveal">
+          <p class="eyebrow">07 — Beyond code</p>
+          <h2>Building consistency.</h2>
+        </div>
+        <div class="card-grid three" id="beyond-grid"></div>
+      </section>
+
+      <section id="contact" class="section">
+        <div class="glass contact reveal">
+          <p class="eyebrow">08 — Contact</p>
+          <h2>Let's build something useful.</h2>
+          <p>
+            I'm looking for software engineering, cloud and AI internship or entry-level opportunities. The best way to
+            reach me is below.
+          </p>
+          <div class="contact-links" id="contact-links"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>© <span id="year"></span> jh<span class="amp">&amp;</span>n · John Otieno</span>
+    </footer>
+
+    <dialog class="modal glass" id="modal" aria-labelledby="modal-title">
+      <button class="modal-close" type="button" aria-label="Close">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
+      </button>
+      <div id="modal-body"></div>
+    </dialog>
+
+    <dialog class="lightbox" id="lightbox" aria-label="Image viewer">
+      <button class="lb-btn lb-close" type="button" aria-label="Close">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
+      </button>
+      <button class="lb-btn lb-prev" type="button" aria-label="Previous image">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
+      </button>
+      <figure>
+        <img id="lb-img" alt="" />
+        <figcaption id="lb-caption"></figcaption>
+      </figure>
+      <button class="lb-btn lb-next" type="button" aria-label="Next image">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
+      </button>
+    </dialog>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
